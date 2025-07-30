@@ -8,7 +8,7 @@ describe(`Workers common behavior`, () => {
     const ctx = createExecutionContext();
     const response = await worker.fetch(request, env, ctx);
     await waitOnExecutionContext(ctx);
-    expect(response.body).toBe('{"name":"Cloudflare"}');
-    expect(response.status).toBe(200);
+    expect(await response.body).toBe('{"name":"Cloudflare"}');
+    expect(await response.status).toBe(200);
   });
 });
